@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    lambdaVer = '1.2.0'
+    jacksonVer = '2.12.3'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+}

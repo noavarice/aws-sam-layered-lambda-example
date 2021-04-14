@@ -1,0 +1,5 @@
+dependencies {
+    implementation("com.amazonaws:aws-lambda-java-core:$lambdaVer")
+    // compileOnly, so layer code will not be included in the runtime
+    compileOnly(project(":layers:math"))
+}

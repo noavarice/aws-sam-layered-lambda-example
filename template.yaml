@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Sample SAM Template for Lambda functions
+
+Resources:
+  MathLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: layers/math
+      CompatibleRuntimes:
+        - java11
+    Metadata:
+      BuildMethod: java11
+  LambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda-function
+      Handler: org.example.function.LambdaFunction::handleRequest
+      Runtime: java11
+      MemorySize: 512
+      Layers:
+        - !Ref MathLayer

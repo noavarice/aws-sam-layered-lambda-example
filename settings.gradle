@@ -1,0 +1,5 @@
+rootProject.name = 'aws-sam-layered-lambda-example'
+
+include ':lambda-function'
+include ':layers:math'
+
